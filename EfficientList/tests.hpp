@@ -103,5 +103,42 @@ void test4() {
     list.print();
     list.remove(0);
     list.print();
+}
 
+void test5() {
+    std::cout << "test5  \n";
+    int* a = new int[10];
+    for (int i = 0; i < 10; ++i) {
+        a[i] = i;
+    }
+   
+    LinkedList<int> list(a, 10);
+    const Element<int> k = list[0];
+    for (int i = 0; i < 10; ++i) {
+        std::cout << list[i];
+        std::cout << '\n';
+    }
+    //list[5] = 3;
+    //list[5] = 6; // this is not Exception!!! firstly, Element(6), thus diff = 0
+                    //secondle list[5] = Element(6) and of course, our diff is bad
+    std::cout << "\n\n";
+    for (int i = 0; i < 10; ++i) {
+        std::cout << list[i];
+        std::cout << '\n';
+    }
+    std::cout << list[5];
+    //std::cout << list[5];
+}
+
+void test6() {
+    std::cout << "test6 \n";
+    int n = 8;//0 1 2 3 4 8+
+    int* a = new int[n];
+    for (int i = 0; i < n; ++i) {
+        a[i] = i;
+    }
+    LinkedList<int> list(a, n);
+    LinkedList<int> list2;
+    list2 = list;
+    list2.print();
 }
